@@ -1,0 +1,154 @@
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f7f9fc;
+    font-family: 'VT323', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #2d3436;
+    padding: 20px;
+}
+
+/* Main Content Box */
+.container {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border: 4px solid #2d3436;
+    background: white;
+    box-shadow: 10px 10px 0px #fab1a0; 
+    width: 100%;
+    max-width: 650px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hero Image Settings */
+.hero-img {
+    width: 100%;
+    max-width: 350px; 
+    height: auto;
+    image-rendering: auto;
+    margin-bottom: 1.5rem;
+    display: block;       
+    margin-left: auto;    
+    margin-right: auto;   
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: #636e72;
+    max-width: 90%;
+}
+
+/* Progress Bar Implementation */
+.status-bar {
+    width: 100%;
+    max-width: 300px;
+    height: 25px;
+    background: #dfe6e9;
+    margin: 0 auto 2.5rem;
+    border: 3px solid #2d3436;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%; 
+    height: 100%;
+    background: #fdcb6e; /* Classic Maple yellow-orange */
+    animation: loadBar 4s infinite ease-in-out;
+}
+
+/* Social Links Layout */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.links a {
+    text-decoration: none;
+    color: #0984e3;
+    font-size: 1.8rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+.links a:hover {
+    color: #d63031;
+    border-bottom: 3px solid #fdcb6e;
+    transform: scale(1.1);
+}
+
+/* --- Animations --- */
+/* Floating effect for the hero image */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+/* Simple loading animation for the progress bar */
+@keyframes loadBar {
+    0% { width: 5%; }
+    50% { width: 85%; }
+    100% { width: 5%; }
+}
+
+/* --- Responsive Design (Mobile & Tablet) --- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 1.5rem 1rem;
+        box-shadow: 6px 6px 0px #fab1a0; 
+        width: 95%;
+    }
+
+    h1 {
+        font-size: 1.8rem; 
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    .hero-img {
+        max-width: 240px; 
+    }
+
+    .links {
+        flex-direction: column; 
+        gap: 10px;
+    }
+
+    .links a {
+        font-size: 1.5rem;
+    }
+
+    .status-bar {
+        max-width: 200px;
+        margin-bottom: 1.5rem;
+    }
+}
