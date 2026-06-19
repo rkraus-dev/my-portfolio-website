@@ -229,3 +229,36 @@ h2 {
     margin-bottom: 2rem;
     color: #f0f0f0;
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-character {
+        order: -1;
+    }
+
+    .character-placeholder {
+        width: 250px;
+        height: 300px;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-links {
+        gap: 1rem;
+    }
+
+    .navbar-links a {
+        font-size: 0.8rem;
+    }
+
+    section {
+        padding: 4rem 1.5rem;
+    }
+}
