@@ -159,10 +159,11 @@ section {
 }
 
 #hero h1 {
-    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-size: clamp(1.8rem, 3.5vw, 3.5rem);
     font-weight: 700;
     line-height: 1.1;
 }
+
 
 #hero h1 span {
     color: #252525;
@@ -188,6 +189,37 @@ section {
 #hero a:hover {
     background-color: #252525;
     color: #d5d5d5;
+}
+
+/* ===== HERO LAYOUT ===== */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-character {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-placeholder {
+    width: 350px;
+    height: 450px;
+    background: rgba(37, 37, 37, 0.08);
+    border-radius: 24px;
+    border: 2px dashed rgba(37, 37, 37, 0.2);
+}
+
+.love {
+    color: #c0392b;
 }
 
 /* ===== HEADINGS ===== */
