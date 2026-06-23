@@ -110,6 +110,10 @@ body {
     line-height: 1.6;
 }
 
+h1:focus-visible {
+    outline: none;
+}
+
 /* ===== NAVBAR ===== */
 .navbar {
     position: sticky;
@@ -487,17 +491,9 @@ h2 {
 
 /* ===== PIXEL ART ANIMATIONS ===== */
 @keyframes float {
-    0% {
-        transform: translateY(0px);
-    }
-
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
+    0%   { transform: translateY(0px) rotate(-1deg); }
+    50%  { transform: translateY(-15px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(-1deg); }
 }
 
 .pixel-float {
