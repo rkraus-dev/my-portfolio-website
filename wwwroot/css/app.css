@@ -299,33 +299,63 @@ section {
 .about-img-4 { width: 200px; animation-delay: 0.7s; margin-top: -30px; transform: rotate(8deg); }  
 
 /* ===== SKILLS ===== */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 2rem;
+.skills-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
 }
 
 .skills-category h3 {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: rgba(37, 37, 37, 0.5);
+    letter-spacing: 0.12em;
+    color: rgba(37, 37, 37, 0.4);
     margin-bottom: 1rem;
 }
 
-.skills-category ul {
-    list-style: none;
+.skill-pills {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 0.6rem;
 }
 
-.skills-category ul li {
-    font-size: 0.95rem;
+.pill {
+    font-size: 0.85rem;
+    padding: 0.4rem 1rem;
+    background: rgba(37, 37, 37, 0.08);
+    border: 1px solid rgba(37, 37, 37, 0.12);
+    border-radius: 20px;
     color: #252525;
-    padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(37, 37, 37, 0.1);
+    transition: all 0.2s;
+}
+
+/* Languages & Core → Blau */
+.skills-category:nth-child(1) .pill:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    color: #fff;
+}
+
+/* Frameworks & Libraries → Lila */
+.skills-category:nth-child(2) .pill:hover {
+    background: #8b5cf6;
+    border-color: #8b5cf6;
+    color: #fff;
+}
+
+/* Tools & DevOps → Orange */
+.skills-category:nth-child(3) .pill:hover {
+    background: #f97316;
+    border-color: #f97316;
+    color: #fff;
+}
+
+/* Other → Grün */
+.skills-category:nth-child(4) .pill:hover {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: #fff;
 }
 
 /* ===== PROJECTS ===== */
