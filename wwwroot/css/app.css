@@ -97,7 +97,9 @@ code {
 }
 
 /* ===== RESET & BASE ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -226,8 +228,10 @@ section {
     object-fit: cover;
     object-position: center 20%;
     z-index: 0;
-    opacity: 0;                      /* neu */
-    transition: opacity 0.6s ease;   /* neu */
+    opacity: 0;
+    /* neu */
+    transition: opacity 0.6s ease;
+    /* neu */
 }
 
 .hero-video.is-ready {
@@ -240,9 +244,9 @@ section {
     inset: 0;
     z-index: 1;
     background: linear-gradient(90deg,
-        rgba(213, 213, 213, 0.92) 0%,
-        rgba(213, 213, 213, 0.55) 35%,
-        rgba(213, 213, 213, 0) 65%);
+            rgba(213, 213, 213, 0.92) 0%,
+            rgba(213, 213, 213, 0.55) 35%,
+            rgba(213, 213, 213, 0) 65%);
 }
 
 .hero-content {
@@ -268,15 +272,25 @@ section {
 }
 
 #hero h1 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.0;
     letter-spacing: -0.02em;
-    color: #252525;
     margin-bottom: 1.2rem;
 }
 
-.hero-name { color: #c0392b; }  
+.hero-greeting {
+    display: block;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 600;
+    color: #252525;
+}
+
+.hero-name {
+    display: block;
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    color: #c0392b;
+}
+
 .hero-sub {
     font-size: clamp(1rem, 1.4vw, 1.25rem);
     color: rgba(37, 37, 37, 0.65);
@@ -486,7 +500,7 @@ section {
     margin-top: -0.5rem;
 }
 
-.project-card > p {
+.project-card>p {
     font-size: 0.9rem;
     color: rgba(37, 37, 37, 0.7);
     line-height: 1.6;
@@ -719,8 +733,8 @@ section {
 
     .hero-overlay {
         background: linear-gradient(180deg,
-            rgba(213, 213, 213, 0) 30%,
-            rgba(213, 213, 213, 0.9) 82%);
+                rgba(213, 213, 213, 0) 30%,
+                rgba(213, 213, 213, 0.9) 82%);
     }
 
     .section-layout,
