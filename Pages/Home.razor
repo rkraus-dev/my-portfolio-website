@@ -1,16 +1,25 @@
 ﻿@page "/"
+@inject IJSRuntime JS
 
 <PageTitle>Robert Kraus | .NET Backend Developer</PageTitle>
 
 <section id="hero">
+    <video class="hero-video" autoplay muted playsinline @ref="heroVideo">
+        <source src="videos/hero-portrait.mp4" type="video/mp4" media="(max-width: 768px)" />
+        <source src="videos/hero-landscape.mp4" type="video/mp4" />
+    </video>
+
+    <div class="hero-overlay"></div>
+
     <div class="hero-content">
         <div class="hero-text">
-            <h1>Hey, I'm <span>Robert Kraus</span></h1>
-            <p>I build things — and I <span class="love">love</span> it when they actually work.</p>
-            <a href="#projects">View my work</a>
-        </div>
-        <div class="hero-character">
-            <img src="images/hero-laptop.png" alt="Floating laptop" class="pixel-float hero-laptop" />
+            <p class="hero-kicker">&gt;&gt; Portfolio — Robert Kraus</p>
+            <h1>Hey, I'm <span class="hero-name">Robert Kraus</span></h1>
+            <p class="hero-sub">.NET Backend Developer building clean, reliable software — from APIs to automation.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="hero-btn primary">View my work</a>
+                <a href="#contact" class="hero-btn ghost">Get in touch</a>
+            </div>
         </div>
     </div>
 </section>
@@ -44,7 +53,7 @@
                             <h2>Skills</h2>
                             <div class="skills-categories">
                                 <div class="skills-category">
-                                    <h3>Languages & Core</h3>
+                                    <h3>Languages &amp; Core</h3>
                                     <div class="skill-pills">
                                         <span class="pill">C#</span>
                                         <span class="pill">SQL</span>
@@ -53,7 +62,7 @@
                                     </div>
                                 </div>
                                 <div class="skills-category">
-                                    <h3>Frameworks & Libraries</h3>
+                                    <h3>Frameworks &amp; Libraries</h3>
                                     <div class="skill-pills">
                                         <span class="pill">ASP.NET Core</span>
                                         <span class="pill">Entity Framework Core</span>
@@ -65,7 +74,7 @@
                                     </div>
                                 </div>
                                 <div class="skills-category">
-                                    <h3>Tools & DevOps</h3>
+                                    <h3>Tools &amp; DevOps</h3>
                                     <div class="skill-pills">
                                         <span class="pill">Git / GitHub</span>
                                         <span class="pill">Docker</span>
@@ -152,7 +161,7 @@
 
                                             <div class="project-card">
                                                 <div class="project-header">
-                                                    <h3>Anime & Manga Tracker</h3>
+                                                    <h3>Anime &amp; Manga Tracker</h3>
                                                     <span class="badge planned">Planned</span>
                                                 </div>
                                                 <p class="project-date">2025</p>
@@ -217,3 +226,17 @@
                                                         </form>
                                                     </div>
                                                 </section>
+
+@code {
+    private ElementReference heroVideo;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/hero.js");
+            await module.InvokeVoidAsync("ensureMuted", heroVideo);
+            await module.InvokeVoidAsync("initNavbarScroll");
+        }
+    }
+}
